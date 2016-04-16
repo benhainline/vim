@@ -3,10 +3,21 @@ syntax on
 
 set nocompatible
 filetype indent plugin on
-set tabstop=2
-set expandtab
 set smarttab
 set autoindent
+set number " line numbers
+set backspace=indent,eol,start " allow more intuitive backspacing
+set expandtab tabstop=2 softtabstop=2 shiftwidth=2 " use spaces in place of tabs
+set incsearch " show matches as pattern is being typed
+set ignorecase smartcase " ignore case in search unless uppercase characters
+set scrolloff=5 sidescrolloff=10 " more useful scrolling
+set directory=/tmp// " directory for swap file
+set encoding=utf-8 " character encoding used inside Vim
+set laststatus=2 " always show status line
+set fileformats=unix,dos,mac " file formats to try when editing a new buffer
+set showmatch " briefly jump to to matching bracket when inserted
+set showcmd " show partial command in the last line of the screen
+set hlsearch " highlight matches of previous search
 
 "let g:NERDTreeDirArrows=0
 "if version >= 703
