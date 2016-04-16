@@ -19,6 +19,23 @@ set showmatch " briefly jump to to matching bracket when inserted
 set showcmd " show partial command in the last line of the screen
 set hlsearch " highlight matches of previous search
 
+set wrap linebreak " word-wrapping on word-boundary
+set nolist " when list is on, it will disable linebreak
+" show special and non-text characters
+set listchars=tab:>-,trail:-,extends:>,precedes:<,nbsp:+
+" highlight special characters red
+highlight SpecialKey ctermfg=Red
+
+" set status line to useful information about file
+set statusline=                               " reset status line
+set statusline+=\ %f\ %M%R%W\                 " file name plus flags
+set statusline+=%=                            " right align separator
+set statusline+=\ %{strlen(&ft)?&ft:'none'}   " filetype or none
+set statusline+=\ %{strlen(&fenc)?&fenc:&enc} " fileencoding or none
+set statusline+=\ %{&ff}                      " fileformat
+set statusline+=\ %c,%l/%L                    " character,current/max line
+set statusline+=\ %p%%\                       " percent through lines of file
+
 "let g:NERDTreeDirArrows=0
 "if version >= 703
 " if exists('+colorcolumn')
