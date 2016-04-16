@@ -1,39 +1,34 @@
 # vim: nofoldenable foldmethod=manual
 snippet file
-	file {
-	  "${1:filename}":
-	    ensure => '${3:file}',
-	    source => 'puppet:///${2:source}',
-	    owner  => '${4:root}',
-	    group  => '${5:root}',
-	    mode   => '${6:0755}',
+	file { '${1:filename}':
+	  ensure => '${3:file}',
+	  source => 'puppet:///${2:source}',
+	  owner  => '${4:root}',
+	  group  => '${5:root}',
+	  mode   => '${6:0755}',
 	}
 snippet exec
-	exec {
-	  "${1:name}":
-	    command     => '${2:command}',
-	    refreshonly => '${3:true}',
-	    onlyif      => '${4:run_if_true}',
-	    unless      => '${5:run_if_false}',
+	exec { '${1:name}':
+	  command     => '${2:command}',
+	  refreshonly => '${3:true}',
+	  onlyif      => '${4:run_if_true}',
+	  unless      => '${5:run_if_false}',
 	}
 snippet package
-	package {
-	  "${1:package_name}":
-	    ensure   => '${2:installed}',
+	package { '${1:package_name}':
+	  ensure   => '${2:installed}',
 	}
 snippet service
-	service {
-	  "${1:service_name}":
-	    ensure   => '${2:running}',
-	    enable   => '${3:true}',
+	service { '${1:service_name}':
+	  ensure   => '${2:running}',
+	  enable   => '${3:true}',
 	}
 snippet cron
-	cron {
-	  "${1:name}":
-	    command => '${2:command}',
-	    hour    => '${3:hour}',
-	    minute  => '${4:minute}',
-	    day     => '${5:day}',
+	cron { '${1:name}':
+	  command => '${2:command}',
+	  hour    => '${3:hour}',
+	  minute  => '${4:minute}',
+	  day     => '${5:day}',
 	}
 snippet class
 	# Class:: $1
@@ -103,18 +98,18 @@ snippet ?
 		'${1}'	=> ${2}
 	  }
 snippet user
-	user{"${1:user}":
+	user{ '${1:user}':
 		comment		=> '${2:$1}',
 		ensure		=> 'present',
 		managehome	=> 'true',
 		home		=> "${3:/home/$1}"
 	}
 snippet group
-	group{"${1:group}":
+	group{ '${1:group}':
 		ensure	=> ${2:present}
 	}
 snippet host
-	host{"${1:hostname}":
+	host{ '${1:hostname}':
 		ip	=> ${2:127.0.0.1}
 	}
 snippet mailalias
